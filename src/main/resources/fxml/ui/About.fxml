@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2">
+
+    <VBox spacing="0" maxWidth="80" maxHeight="320">
+        <JFXButton prefWidth="50" prefHeight="50" styleClass="fx-printer-logo" style=" -fx-background-color: #fff">
+        </JFXButton>
+    </VBox>
+
+    <VBox spacing="0" maxWidth="800" maxHeight="300" alignment="BASELINE_CENTER">
+        <Label styleClass="printer-title-label" style="-fx-padding: 30, 0, 0, 0">QR CODE</Label>
+        <Label styleClass="printer-subhead-label" style="-fx-padding: 10, 0, 0, 0">Qr code desktop printing software
+        </Label>
+    </VBox>
+
+    <VBox spacing="50" alignment="BOTTOM_CENTER">
+        <Label styleClass="copyright-label">Copyright ©2018 All rights reserved</Label>
+    </VBox>
+
+</StackPane>
+
+

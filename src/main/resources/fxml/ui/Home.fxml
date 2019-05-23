@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2">
+
+    <VBox maxWidth="600" maxHeight="500">
+        <GridPane alignment="BASELINE_CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="70.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="130.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="70.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="130.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="70.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="130.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES"/>
+                <!--<RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES"/>-->
+            </rowConstraints>
+            <!--选择连接类型：USB/Network-->
+            <children>
+                <Label styleClass="title-label" GridPane.rowIndex="0" GridPane.columnIndex="0">Type:
+                </Label>
+                <JFXComboBox fx:id="comboConnectType" prefWidth="130" promptText="select type" GridPane.rowIndex="0"
+                             GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <Label>USB</Label>
+                            <Label>Network</Label>
+                        </FXCollections>
+                    </items>
+                    <validators>
+                        <RequiredFieldValidator message="field is required">
+                            <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                        </RequiredFieldValidator>
+                    </validators>
+                </JFXComboBox>
+            </children>
+            <!--选择连接的打印机-->
+            <children>
+                <Label fx:id="labelPrinterList" styleClass="title-label" prefHeight="190"
+                       GridPane.rowIndex="0" GridPane.columnIndex="3" GridPane.columnSpan="2">Printer List:
+                </Label>
+                <JFXComboBox fx:id="textPrinterList" prefWidth="200" promptText="select printer"
+                             GridPane.rowIndex="0"
+                             GridPane.columnIndex="4" GridPane.columnSpan="2">
+                    <validators>
+                        <RequiredFieldValidator message="field is required">
+                            <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                        </RequiredFieldValidator>
+                    </validators>
+                </JFXComboBox>
+            </children>
+            <!--选择连接网络打印机-->
+            <children>
+                <Label fx:id="labelDriverIp" visible="false" styleClass="title-label" GridPane.rowIndex="0"
+                       GridPane.columnIndex="2"
+                       GridPane.halignment="RIGHT">Ip:
+                </Label>
+                <JFXTextField id="textDriverIp" visible="false" promptText="00.00.00.00" GridPane.rowIndex="0"
+                              GridPane.columnIndex="3">
+                    <validators>
+                        <RequiredFieldValidator message="field is required">
+                            <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                        </RequiredFieldValidator>
+                    </validators>
+                </JFXTextField>
+                <Label fx:id="labelDriverPort" visible="false" styleClass="title-label" GridPane.rowIndex="0"
+                       GridPane.columnIndex="4"
+                       GridPane.halignment="RIGHT">Port:
+                </Label>
+                <JFXTextField id="textDriverPort" visible="false" promptText="input port" GridPane.rowIndex="0"
+                              GridPane.columnIndex="5">
+                    <validators>
+                        <RequiredFieldValidator message="field is required">
+                            <FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>
+                        </RequiredFieldValidator>
+                    </validators>
+                </JFXTextField>
+            </children>
+
+            <!--打印部门、数量、标签大小-->
+            <!--<children>-->
+                <!--<Label styleClass="title-label" alignment="BOTTOM_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="0"-->
+                       <!--GridPane.halignment="RIGHT">Dept.:-->
+                <!--</Label>-->
+                <!--<JFXTextField id="textDepartment" promptText="department name" GridPane.rowIndex="1"-->
+                              <!--GridPane.columnIndex="1">-->
+                    <!--<validators>-->
+                        <!--<RequiredFieldValidator message="field is required">-->
+                            <!--<FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>-->
+                        <!--</RequiredFieldValidator>-->
+                    <!--</validators>-->
+                <!--</JFXTextField>-->
+
+                <!--<Label styleClass="title-label" GridPane.rowIndex="1" GridPane.columnIndex="2"-->
+                       <!--GridPane.halignment="RIGHT">QTY:-->
+                <!--</Label>-->
+                <!--<JFXTextField id="textNumber" promptText="printing quantity" GridPane.rowIndex="1"-->
+                              <!--GridPane.columnIndex="3">-->
+                    <!--<validators>-->
+                        <!--<RequiredFieldValidator message="field is required">-->
+                            <!--<FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>-->
+                        <!--</RequiredFieldValidator>-->
+                    <!--</validators>-->
+                <!--</JFXTextField>-->
+
+                <!--<Label styleClass="title-label" GridPane.rowIndex="1" GridPane.columnIndex="4"-->
+                       <!--GridPane.halignment="RIGHT">Size:-->
+                <!--</Label>-->
+                <!--<JFXComboBox id="textLabelSize" prefWidth="200" promptText="select size" GridPane.rowIndex="1"-->
+                             <!--GridPane.columnIndex="5">-->
+                    <!--<items>-->
+                        <!--<FXCollections fx:factory="observableArrayList">-->
+                            <!--<Label>25 x 12 mm</Label>-->
+                            <!--<Label>62 x 36 mm</Label>-->
+                        <!--</FXCollections>-->
+                    <!--</items>-->
+                    <!--<validators>-->
+                        <!--<RequiredFieldValidator message="field is required">-->
+                            <!--<FontAwesomeIconView glyphName="WARNING" style="-fx-font-family: FontAwesome;"/>-->
+                        <!--</RequiredFieldValidator>-->
+                    <!--</validators>-->
+                <!--</JFXComboBox>-->
+            <!--</children>-->
+        </GridPane>
+
+        <!--打印按钮-->
+        <GridPane alignment="BASELINE_CENTER">
+            <columnConstraints>
+                <!--<ColumnConstraints hgrow="SOMETIMES" prefWidth="40.0"/>-->
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="100.0" prefHeight="150.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <JFXButton fx:id="buttonRelease" prefWidth="100" prefHeight="40" buttonType="RAISED" text="打印"
+                           styleClass="custom-jfx-button-raised" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           GridPane.halignment="CENTER"/>
+
+                <JFXButton fx:id="buttonCancel" visible="false" prefWidth="100" prefHeight="40" buttonType="RAISED" text="取消打印"
+                           styleClass="custom-jfx-button-cancel" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           GridPane.halignment="CENTER"/>
+            </children>
+        </GridPane>
+
+        <!--日志-->
+        <HBox alignment="BASELINE_CENTER">
+            <TextArea fx:id="console" prefWidth="500" prefHeight="250" promptText="print log"
+                      editable="false" style="-fx-font-size: 13; -fx-border-color: #73879C">
+            </TextArea>
+        </HBox>
+    </VBox>
+</StackPane>
+

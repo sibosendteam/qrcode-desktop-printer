@@ -1,0 +1,73 @@
+group 'printer'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'http://sevntu-checkstyle.github.com/sevntu.checkstyle/maven2' }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', includes: ['*jar'])
+    compile 'io.datafx:datafx:8.0.1'
+    compile 'io.datafx:flow:8.0.1'
+    compile 'com.jfoenix:jfoenix:8.0.7'
+    compile 'de.jensd:fontawesomefx-commons:8.15'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
+}
+
+apply plugin: 'javafx-gradle-plugin'
+
+jfx {
+    verbose = true
+    mainClass = "com.code.printer.MainPrinter"
+    appName = "QR_Code_Printer"
+    jfxAppOutputDir = "build/printer/app"
+    jfxMainAppJarName = "qr-code-printer.jar"
+    deployDir = "src/main/deploy"
+    useEnvironmentRelativeExecutables = true
+    libFolderName = "lib"
+
+    // gradle jfxJar
+    css2bin = false
+    preLoader = null // String
+    updateExistingJar = false
+    allPermissions = false
+    manifestAttributes = null // Map<String, String>
+    addPackagerJar = true
+    copyAdditionalAppResourcesToJar = false
+    skipCopyingDependencies = false
+    useLibFolderContentForManifestClasspath = false
+    fixedManifestClasspath = null
+
+    // gradle jfxNative
+    identifier = null  // String - setting this for windows-bundlers makes it possible to generate upgradeable installers (using same GUID)
+    vendor = "sibosend"
+    nativeOutputDir = "build/printer/native"
+    bundler = "ALL" // set this to some specific, if your don't want all bundlers running, examples "windows.app", "jnlp", ...
+    jvmProperties = null // Map<String, String>
+    jvmArgs = null // List<String>
+    userJvmArgs = null // Map<String, String>
+    launcherArguments = null // List<String>
+    nativeReleaseVersion = "1.0"
+    needShortcut = false
+    needMenu = false
+    bundleArguments = [
+            runtime: null
+    ]
+}
+

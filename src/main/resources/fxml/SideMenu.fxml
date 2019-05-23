@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import java.lang.String?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+    <styleClass>
+        <String fx:value="side-menu"/>
+    </styleClass>
+    <JFXListView fx:id="sideList">
+        <Label fx:id="home">
+            Home
+            <graphic>
+                <StackPane styleClass="custom-jfx-list-view-icon-container">
+                    <FontAwesomeIconView glyphName="HOME" size="1.8em" styleClass="option-jfx-list-view-icon"/>
+                </StackPane>
+            </graphic>
+        </Label>
+        <JFXListView fx:id="sideSubList" styleClass="sublist">
+            <groupnode>
+                <Label styleClass="sub-label">
+                    Help
+                    <graphic>
+                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                            <FontAwesomeIconView glyphName="USER" size="1.8em"
+                                                 styleClass="option-jfx-list-view-icon"/>
+                        </StackPane>
+                    </graphic>
+                </Label>
+            </groupnode>
+            <Label fx:id="about" style="-fx-padding: 0 0 0 30">About
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="INFO_CIRCLE" size="1.8em"
+                                             styleClass="option-jfx-list-view-icon"/>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <!--<Label fx:id="license" style="-fx-padding: 0 0 0 30">License-->
+                <!--<graphic>-->
+                    <!--<StackPane styleClass="custom-jfx-list-view-icon-container">-->
+                        <!--<FontAwesomeIconView glyphName="INFO_CIRCLE" size="1.8em"-->
+                                             <!--styleClass="option-jfx-list-view-icon"/>-->
+                    <!--</StackPane>-->
+                <!--</graphic>-->
+            <!--</Label>-->
+        </JFXListView>
+    </JFXListView>
+</StackPane>
