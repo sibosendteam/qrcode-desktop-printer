@@ -27,10 +27,13 @@
 
 打包成功之后需要将工程根目录的
 
-1.zDriverAdapter.dll
-2.zDriverAdapter64.dll
-3.ZebraNativeUsbAdapter_32.dll
-4.ZebraNativeUsbAdapter_64.dll
+  1.zDriverAdapter.dll
+
+  2.zDriverAdapter64.dll
+    
+  3.ZebraNativeUsbAdapter_32.dll
+  
+  4.ZebraNativeUsbAdapter_64.dll
 
 四个斑马打印机驱动包放到和主jar包同级目录
 
