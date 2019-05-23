@@ -1,7 +1,5 @@
 # qrcode-desktop-printer
 
-------
-
 这是一款基于JavaFX开发的桌面条码标签打印软件，它不同于[ZebraDesigner](https://www.zebra.cn/us/en/products/software/barcode-printers/zebralink/zebra-designer.html)，可实现批量打印，必要时可连接数据库。
 
 特色：
@@ -22,14 +20,18 @@
 [javafx-gradle-plugin插件](https://github.com/FibreFoX/javafx-gradle-plugin)
 
 1、打包可运行Jar：gradle jfxJar 
+
 2、打包可运行exe：gradle jfxNative 
 
 注意：
+
 打包成功之后需要将工程根目录的
-zDriverAdapter.dll
-zDriverAdapter64.dll
-ZebraNativeUsbAdapter_32.dll
-ZebraNativeUsbAdapter_64.dll
+
+1.zDriverAdapter.dll
+2.zDriverAdapter64.dll
+3.ZebraNativeUsbAdapter_32.dll
+4.ZebraNativeUsbAdapter_64.dll
+
 四个斑马打印机驱动包放到和主jar包同级目录
 
 ### 温馨提示
