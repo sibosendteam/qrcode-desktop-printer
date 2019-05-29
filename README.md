@@ -40,7 +40,5 @@
 ### 温馨提示
 
 * 双击QR_Code_Printer目录下的QR_Code_Printer.exe可查看效果。
-
-* 该项目仅提供了小部分功能，二维码采用生成图片的方式打印，批量生产时效率低下。提高打印效率可通过[ZPL](https://www.zebra.cn/us/en/support-downloads/knowledge-articles/zpl-command-information-and-details.html)命令的方式去实现，详情请栈内信留言，我们将第一时间与您联系。
  
  
